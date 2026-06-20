@@ -93,3 +93,7 @@ body{
     font-weight: 700;
     color: white;
 }
+.books-container{
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+}
