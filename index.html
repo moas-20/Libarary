@@ -8,16 +8,41 @@
 
     <body>
 
+        <!-- Tho Top Navbar -->
         <div class="nav">
             <div class="top-nav">
                <div><h1>MyLibarary</h1></div> 
-               <div><button class="nav-add">Add Book</button></div>
+               <div><button class="form-disp">Add Book</button></div>
             </div>
             <div class="button-nav">
                 <hr>
             </div>
         </div>
-        <div class="main"></div>
+
+        <!-- Main Body -->
+        <div class="main">
+            <div class="form-container">
+                <form class="form">
+                    <h3>Add new Book</h3>
+                    <hr>
+                    <label for="title">Title: </label>
+                    <input type="text" name="title" id="title" required>
+                    <label for="auther">Auther: </label>
+                    <input type="text" name="auther" id="auther" required>
+                    <label for="pages">Pages: </label>
+                    <input type="number" name="pages" id="pages" required>
+                    <div class="check">
+                        <label for="status">Did you read the book?</label>
+                        <input type="checkbox" name="status" id="status" required>
+                    </div>           
+                    <div class="form-btn">
+                        <button class="form-cns" type="button">Cancle</button>
+                        <button class="form-add" type="button">Add</button>
+                    </div>
+                </form>
+            </div>
+            <div class="books-container"></div>
+        </div>
 
 
 
