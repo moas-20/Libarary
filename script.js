@@ -1,6 +1,7 @@
 const title = document.querySelector("#title");
 const auther = document.querySelector("#auther");
 const pages = document.querySelector("#pages");
+const readCheck = document.querySelector("#status");
 // const title = document.querySelector("#title");
 
 
@@ -15,6 +16,10 @@ disp.addEventListener("click",()=>{
 const cancleAdd = document.querySelector(".form-cns");
 cancleAdd.addEventListener('click',()=>{
     form.classList.remove("active");
+    title.value = "";
+    auther.value = "";
+    pages.value = "";  
+    readCheck.checked = false;
 })
 
 // adding & display new book
