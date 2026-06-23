@@ -31,8 +31,9 @@ cancleAdd.addEventListener('click',()=>{
 
 // adding & display new book
 addBook.addEventListener('click',()=>{
+    form.classList.remove("active");
     addBookToLibrary();
-    
+
 })
 
 
@@ -50,11 +51,16 @@ function addBookToLibrary() {
     // take params, create a book then store it in the array
     let book = new Book(title.value,auther.value,pages.value,readCheck.checked);
     myLibrary.push(book);
-  
+    drawCard(myLibrary);
+
+    title.value = "";
+    auther.value = "";
+    pages.value = "";
+    readCheck.checked = false;
 }
 
 // creat card contain a book info
-function displayCard(){
+function displayCard(book){
     let card = document.createElement("div");
     card.classList.add("card");
 
@@ -108,3 +114,10 @@ function displayCard(){
     container.appendChild(card);
 }
 
+// loop through myLibarary and draw book for every element
+function drawCard(array){
+    container.innerHTML = "";
+    array.forEach(element => {
+        displayCard(element);
+    });
+}
