@@ -52,3 +52,59 @@ function addBookToLibrary() {
     myLibrary.push(book);
   
 }
+
+// creat card contain a book info
+function displayCard(){
+    let card = document.createElement("div");
+    card.classList.add("card");
+
+    let cardData = document.createElement("div");
+    cardData.classList.add("card-data");
+    
+    let title = document.createElement("h3");
+    title.textContent = "Title";
+
+    let titleValue = document.createElement("p");
+    titleValue.textContent = book.title;
+
+    let auther = document.createElement("h3");
+    auther.textContent = "Auther";
+
+    let autherValue = document.createElement("p");
+    autherValue.textContent = book.auther;
+
+    let pages = document.createElement("h3");
+    pages.textContent = "Pages";
+
+    let pageValue = document.createElement("p");
+    pageValue.textContent = book.pages;
+
+    let status = document.createElement("span");
+    status.textContent = book.status ? "Read" : "Not Reads";
+
+    cardData.append(
+        title,
+        titleValue,
+        auther,
+        autherValue,
+        pages,
+        pageValue,
+        status
+    );
+
+    let cardBtn = document.createElement("div");
+    cardBtn.classList.add("card-btn");
+
+
+    let read = document.createElement("button");
+    read.textContent = "read";
+    let delet = document.createElement("button");
+    delet.textContent = "delet";
+    cardBtn.appendChild(read);
+    cardBtn.appendChild(delet);
+
+    card.appendChild(cardData);
+    card.appendChild(cardBtn);
+    container.appendChild(card);
+}
+

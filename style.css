@@ -95,5 +95,26 @@ body{
 }
 .books-container{
     display: grid;
-    grid-template-columns: repeat(3,minmax(0,1fr));
+    grid-template-columns: repeat(3,minmax(0,500px));
+    justify-items: center;
+    gap: 20px;
+    padding-top: 20px;
+
+}
+.card{
+    height: 300px;
+    width: 300px;
+    background-color:whitesmoke;
+    border-radius: 12px;
+    border-left: 4px solid salmon;
+    box-shadow: 3px 3px 3px 3px rgb(146, 142, 142);
+    padding: 30px;
+}
+.card p{
+    font-weight: 500;
+}
+.card-btn{
+    padding: 40px;
+    display: flex;
+    justify-content: space-around;
 }
