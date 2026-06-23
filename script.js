@@ -88,13 +88,20 @@ function displayCard(book){
     let status = document.createElement("span");
     status.textContent = book.status ? "Read" : "Not Reads";
 
+    let hr1 = document.createElement('hr');
+    let hr2 = document.createElement('hr');
+    let hr3 = document.createElement('hr');
+
     cardData.append(
         title,
         titleValue,
+        hr1,
         auther,
         autherValue,
+        hr2,
         pages,
         pageValue,
+        hr3,
         status
     );
 
@@ -103,8 +110,10 @@ function displayCard(book){
 
 
     let read = document.createElement("button");
+    read.classList.add("read")
     read.textContent = "read";
     let delet = document.createElement("button");
+    delet.classList.add("notReadf")
     delet.textContent = "delet";
     cardBtn.appendChild(read);
     cardBtn.appendChild(delet);
