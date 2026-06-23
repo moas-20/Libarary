@@ -117,4 +117,24 @@ body{
     padding: 40px;
     display: flex;
     justify-content: space-around;
+    gap: 20px;
+}
+
+.read{
+    width: 80px;
+    height: 30px;
+    background-color: rgb(76, 233, 76);
+    border: none;
+    border-radius: 20px;
+    font-weight: 700;
+    color: white;
+}
+.notRead{
+    width: 80px;
+    height: 30px;
+    background-color: rgb(219, 65, 27);
+    border: none;
+    border-radius: 20px;
+    font-weight: 700;
+    color: white;
 }

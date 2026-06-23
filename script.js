@@ -31,6 +31,8 @@ cancleAdd.addEventListener('click',()=>{
 
 // adding & display new book
 addBook.addEventListener('click',()=>{
+    // to orevent the form from refreash
+    event.preventDefault();
     form.classList.remove("active");
     addBookToLibrary();
 
@@ -86,7 +88,7 @@ function displayCard(book){
     pageValue.textContent = book.pages;
 
     let status = document.createElement("span");
-    status.textContent = book.status ? "Read" : "Not Reads";
+    status.textContent = book.status ? "Read" : "Not Read";
 
     let hr1 = document.createElement('hr');
     let hr2 = document.createElement('hr');
@@ -113,10 +115,22 @@ function displayCard(book){
     read.classList.add("read")
     read.textContent = "read";
     let delet = document.createElement("button");
-    delet.classList.add("notReadf")
+    delet.classList.add("notRead")
     delet.textContent = "delet";
+
+    read.addEventListener("click",()=>{
+        if (status.textContent === "Read") {
+            status.textContent = "Not Read"
+        }
+        else{
+            status.textContent = "Read";
+        }
+    })
+
     cardBtn.appendChild(read);
     cardBtn.appendChild(delet);
+
+
 
     card.appendChild(cardData);
     card.appendChild(cardBtn);
