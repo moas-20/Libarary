@@ -43,6 +43,7 @@ const myLibrary = [];
 
 function Book(title,auther,pages,status){
     // the constructor...
+    this.id = crypto.randomUUID();
     this.title = title;
     this.auther = auther;
     this.pages = pages;
@@ -117,15 +118,25 @@ function displayCard(book){
     let delet = document.createElement("button");
     delet.classList.add("notRead")
     delet.textContent = "delet";
+    //read not read card button
+   read.addEventListener("click", () => {
+        // نterm عن الكتاب في المصفوفة باستخدام الـ ID
+        let foundBook = myLibrary.find(item => item.id === book.id);
+        if (foundBook) {
+            foundBook.status = !foundBook.status; // قلب الحالة
+            drawCard(myLibrary); // إعادة الرسم
+        }
+    });
 
-    read.addEventListener("click",()=>{
-        if (status.textContent === "Read") {
-            status.textContent = "Not Read"
+    // delet book from the screen
+    delet.addEventListener("click",()=>{
+        let bookIndex = myLibrary.findIndex(item => item.id === book.id);
+        if(bookIndex !== -1){
+            myLibrary.splice(bookIndex,1);
+            drawCard(myLibrary);
         }
-        else{
-            status.textContent = "Read";
-        }
-    })
+    });
+    
 
     cardBtn.appendChild(read);
     cardBtn.appendChild(delet);
