@@ -120,11 +120,11 @@ function displayCard(book){
     delet.textContent = "delet";
     //read not read card button
    read.addEventListener("click", () => {
-        // نterm عن الكتاب في المصفوفة باستخدام الـ ID
+        
         let foundBook = myLibrary.find(item => item.id === book.id);
         if (foundBook) {
-            foundBook.status = !foundBook.status; // قلب الحالة
-            drawCard(myLibrary); // إعادة الرسم
+            foundBook.status = !foundBook.status; 
+            drawCard(myLibrary);
         }
     });
 
